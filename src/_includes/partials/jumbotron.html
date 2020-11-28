@@ -1,0 +1,19 @@
+<div class="jumbotron jumbotron-fluid">
+    <div style="position: absolute; top: 0; padding-left: 10px; padding-top: 5px; font-size: 15px">
+        {% if isHomepage %}
+            <a href="https://www.tdpain.net">Return to tdpain.net</a>
+        {% else %}
+            <a href="../">Go back</a>
+        {% endif %}
+    </div>
+    <div class="container">
+
+        {% if isHomepage %}
+            <h1 class="display-4">Revision</h1>
+        {% else %}
+            <h1 class="display-4">{{ section }} {{ sectionTitle }}</h1>
+        {% endif %}
+
+        <p class="lead">{{ siteData.courseName }}</p>
+    </div>
+</div>

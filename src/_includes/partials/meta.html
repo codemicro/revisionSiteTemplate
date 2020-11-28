@@ -1,0 +1,11 @@
+<meta property="og:site_name" content="{{ siteData.metaSite }}">
+{% if isHomepage %}
+    <meta property="og:title" content="OCR Computer Science revision">
+    <meta property="og:description" content="{{ siteData.metaDesc }}">
+    <meta name="description" content="{{ siteData.metaDesc }}">
+{% else %}
+    <meta property="og:title" content="OCR CompSci - {{ section }} {{ sectionTitle }}">
+    <meta property="og:description" content="Revision materials for section {{ section }} ({{ sectionTitle }}) of the OCR GCSE CompSci course.">
+    <meta name="description" content="Revision materials for section {{ section }} ({{ sectionTitle }}) of the OCR GCSE CompSci course.">
+{% endif %}
+<meta property="og:url" content="{{ canonicalURL }}">

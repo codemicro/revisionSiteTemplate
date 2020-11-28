@@ -1,0 +1,5 @@
+baseURL: http://localhost:8080
+metaSite: tdpain.net
+metaDesc: Revision materials for the 2015 OCR Computer Science A-level course, based on the OCR specification.
+courseName: OCR Computer Science H446
+siteTitle: OCR CompSci

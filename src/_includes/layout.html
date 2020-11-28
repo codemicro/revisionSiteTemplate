@@ -1,0 +1,35 @@
+{% set canonicalURL = siteData.baseURL + page.url %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ pageTitle }}</title>
+
+    {% if isHomepage %}
+        <title>{{ siteData.siteTitle }}</title>
+    {% else %}
+        <title>{{ siteData.siteTitle }} | {{ section }} {{ sectionTitle }}</title>
+    {% endif %}
+
+    <link rel="stylesheet" href="{{ baseURL }}/bootstrap.min.css" type="text/css">
+    <script src="{{ baseURL }}/bootstrap.min.js" defer></script>
+    <script src="{{ baseURL }}/jquery-3.5.1.slim.min.js" defer></script>
+
+    {% include 'partials/meta.html' %}
+
+    {% block head %}{% endblock %}
+</head>
+<body>
+    
+    {% include 'partials/jumbotron.html' %}
+    <main class="container">
+        {% block body %}{% endblock %}
+        <br>
+        {% include 'partials/footer.html' %}
+    </main>
+    <br>
+
+</body>
+</html>
