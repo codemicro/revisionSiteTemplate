@@ -13,9 +13,9 @@
         <title>{{ siteData.siteTitle }} | {{ section }} {{ sectionTitle }}</title>
     {% endif %}
 
-    <link rel="stylesheet" href="{{ baseURL }}/bootstrap.min.css" type="text/css">
-    <script src="{{ baseURL }}/bootstrap.min.js" defer></script>
-    <script src="{{ baseURL }}/jquery-3.5.1.slim.min.js" defer></script>
+    <link rel="stylesheet" href="{{ siteData.baseURL }}/bootstrap.min.css" type="text/css">
+    <script src="{{ siteData.baseURL }}/bootstrap.min.js" defer></script>
+    <script src="{{ siteData.baseURL }}/jquery-3.5.1.slim.min.js" defer></script>
 
     {% include 'partials/meta.html' %}
 
