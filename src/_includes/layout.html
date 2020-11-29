@@ -5,8 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ pageTitle }}</title>
-
+    
     {% if isHomepage %}
         <title>{{ siteData.siteTitle }}</title>
     {% else %}
@@ -17,6 +16,13 @@
     <script src="{{ siteData.baseURL }}/bootstrap.min.js" defer></script>
     <script src="{{ siteData.baseURL }}/jquery-3.5.1.slim.min.js" defer></script>
 
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic");
+        body {
+            font-family: "Lato", sans-serif;
+        }
+    </style>
+    
     {% include 'partials/meta.html' %}
 
     {% block head %}{% endblock %}
