@@ -1,0 +1,11 @@
+{% macro image(imageurl, alt, width="40%") %}
+<div class="d-flex justify-content-center">
+    <img src="{{ imageurl }}" class="img-fluid rounded" width="{{ width }}" alt="{{ alt }}">
+</div>
+{% endmacro %}
+
+{% macro caption(text) %}
+<div class="d-flex justify-content-center">
+    <figcaption class="figure-caption justify-content-center">{{ text | safe }}</figcaption>
+</div>
+{% endmacro %}

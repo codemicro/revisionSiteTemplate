@@ -1,0 +1,7 @@
+{% macro header(id, content) %}
+<h3 id="{{ id }}">{{ content | safe }}</h3>
+{% endmacro %}
+
+{% macro subheader(id, content) %}
+<h4 id="{{ id }}">{{ content }}</h5>
+{% endmacro %}

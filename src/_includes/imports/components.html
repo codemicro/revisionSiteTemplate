@@ -1,0 +1,3 @@
+{% macro tooltip(text, description) %}
+<span style="text-decoration-style: dotted; text-decoration-line: underline;" data-toggle="tooltip" data-placement="top" title="{{ description }}">{{ text | safe }}</span>
+{% endmacro %}

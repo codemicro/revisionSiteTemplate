@@ -1,10 +1,13 @@
 {% set section = "1.1" %}
 {% set sectionTitle = "I do not know what to put here" %}
 
-{% extends 'layout.html' %}
+{% import "imports/headers.html" as headers %}
+{% import "imports/images.html" as images %}
+{% import "imports/components.html" as components %}
+
+{% extends "layout.html" %}
 
 {% block body %}
-<!-- This is a sample page -->
 <div class="card" style="width: 18rem;">
     <div class="card-body">
         <h6>Contents</h6>
@@ -25,21 +28,19 @@
 
 <br>
 
-<h3 id="cpu">CPUs</h3>
+{{ headers.header("cpu", "CPUs") }}
 
-<div class="d-flex justify-content-center">
-    <img src="../img/cpu.jpg" class="img-fluid rounded" width="40%" alt="A CPU">
-</div>
+{{ images.image("../img/cpu.jpg", "A CPU") }}
 
 <br>
 
-<h5 id="purp">The purpose of the CPU</h5>
+{{ headers.subheader("purp", "The purpose of the CPU") }}
 <p>
-    The <span style="text-decoration-style: dotted; text-decoration-line: underline;" data-toggle="tooltip" data-placement="top" title="Central Processing Unit">CPU</span> is often refered to as the "brains of the computer" - and it is. The CPU carries out mathematical operations, in order to process data and execute instructions. Without it, the computer would be unable to do anything, and would be an expensive paperweight.</p>
+    The {{ components.tooltip("CPU", "Central Processing Unit") }} is often refered to as the "brains of the computer" - and it is. The CPU carries out mathematical operations, in order to process data and execute instructions. Without it, the computer would be unable to do anything, and would be an expensive paperweight.</p>
 
-<h5 id="speed">Processor speed</h5>
+{{ headers.subheader("speed", "Processor speed") }}
 <p>
-    All CPUs have a speed, measured in hertz. This refers to the number of instructions (or cycles) they can process per second. Typically, today processors have speeds measured in <span style="text-decoration-style: dotted; text-decoration-line: underline;" data-toggle="tooltip" data-html="true" data-placement="top" title="Abbreviated 'GHz'<br>Equates to 1 billion cycles per second">gigahertz</span>, typically ranging from two to three gigahertz, but older processors were measured in megahertz.</p>
+    All CPUs have a speed, measured in hertz. This refers to the number of instructions (or cycles) they can process per second. Typically, today processors have speeds measured in {{ components.tooltip("gigahertz", "Abbreviated 'GHz'\nEquates to 1 billion cycles per second") }}, typically ranging from two to three gigahertz, but older processors were measured in megahertz.</p>
 <p>
     <a href="http://www.mooreslaw.org/" target="_blank" rel="noopener">Moore's Law</a> relates to processor speed; it was created in the 1970s by Gordon E. Moore when he was working at Intel as president of the company. It stated that:
     <blockquote class="blockquote">
@@ -47,7 +48,7 @@
     </blockquote>
     which proved true, for a long time, however processor speeds have reached a limit and have plateaued.</p>
 
-<h5 id="core">Processor cores</h5>
+{{ headers.subheader("core", "Processor cores") }}
 <p>
     Within a processor, there are smaller processors called cores, where instructions are executed. Within a CPU as a whole, you can have one or multiple cores, for example a dual or quad core processor. Each core also operates independently of all the other cores.
 </p>
@@ -55,12 +56,12 @@
     The benefit of having more cores in a CPU is that it gives the processor the capacity to execute as much as two instructions per tick, however this does not always happen.
 </p>
 
-<h5 id="cache">Processor cache</h5>
+{{ headers.subheader("cache", "Processor cache") }}
 <p>
     All processors also have a small amount of very fast, volatile memory inside them, called cache. This cache acts as a buffer between the processor and the main system memory (RAM). This is needed because, even though RAM is fast, the processor is still faster, so it uses the processor cache in order to reduce the amount of time spent waiting for the RAM by storing commonly used instructions in the cache as well as the main memory.
 </p>
 <p>
-    There are also three different types, or levels, of cache commonly found in CPUs. This is known as <span style="text-decoration-style: dotted; text-decoration-line: underline;" data-toggle="tooltip" data-html="true" data-placement="top" title="Level one, level two and level three">L1, L2 and L3</span>.
+    There are also three different types, or levels, of cache commonly found in CPUs. This is known as {{ components.tooltip("L1, L2 and L3", "Level one, level two and level three") }}.
     <ul>
         <li>Level 1
             <ul>
@@ -83,7 +84,7 @@
     </ul>
 </p>
 
-<h5 id="perf">Factors affecting processor performance</h5>
+{{ headers.subheader("perf", "Factors affecting processor performance") }}
 <p>
     <ul>
         <li>Clock speed
@@ -104,7 +105,7 @@
     </ul>
 </p>
 
-<h5 id="vonn">The Von Neumann architecture</h5>
+{{ headers.subheader("vonn", "The Von Neumann architecture") }}
 <p>
     When using early computers, if you wanted to perform a calculation, you had to manually rewire the computer by hand. American computer scientist John Von Neumann had the idea that instead of storing only data in the main memory, the instructions should be stored in the main memory also. This meant the computer would be much easier to reprogram, as the program itself would effectively be treated like data. This stored-program architecture came to be known as the "Von Neumann" architecture.
 </p>
@@ -151,14 +152,11 @@
 <p>
     The main memory and CPU are connected by three data buses - the address bus, the control bus, and the data bus. The address bus is a one way bus going from the CPU to main memory, and is used to request the contents of a specific data address from the main memory. The data bus is two way, and is used to write to and retrieve data from the main memory. The control bus is used to send instruction signals to the main memory, for example read/write commands.
 </p>
-<div class="d-flex justify-content-center">
-        <img src="../img/vonneumann.jpg" class="img-fluid rounded" width="40%" alt="An example of the Von Neumann architecture">
-</div>
-<div class="d-flex justify-content-center">
-        <img src="../img/controlbuses.jpg" class="img-fluid rounded" width="40%" alt="An example of the Von Neumann architecture">
-</div>
 
-<h5 id="issues">Problems with Von Neumann</h5>
+{{ images.image("../img/vonneumann.jpg", "An example of the Von Neumann architecture") }}
+{{ images.image("../img/controlbuses.jpg", "Control buses in a CPU") }}
+
+{{ headers.subheader("issues", "Problems with Von Neumann") }}
 <p>
     <ol>
         <li>Every piece of data and instruction has to be passed through the data bus to go between the CPU and main memory, or vice versa.
@@ -209,14 +207,10 @@
     </ul>
 </p>
 
-<h3 id="embed">Embedded systems</h3>
+{{ headers.header("embed", "Embedded systems") }}
 
-<div class="d-flex justify-content-center">
-    <img src="../img/microwave.jpg" class="img-fluid rounded" width="40%" alt="Resultant explosion from leaving a spoon in the microwave">
-</div>
-<div class="d-flex justify-content-center">
-    <figcaption class="figure-caption justify-content-center">Resultant explosion from leaving a spoon in the microwave</figcaption>
-</div>
+{{ images.image("../img/microwave.jpg", "Resultant explosion from leaving a spoon in the microwave") }}
+{{ images.caption("Resultant explosion from leaving a spoon in the microwave") }}
 
 <h5 id="esys">What's an embedded system?</h5>
 <p>
