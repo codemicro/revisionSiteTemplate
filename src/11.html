@@ -8,23 +8,20 @@
 {% extends "layout.html" %}
 
 {% block body %}
-<div class="card" style="width: 18rem;">
-    <div class="card-body">
-        <h6>Contents</h6>
+{% include "partials/contentsBegin.html" %}
+<ul>
+    <li><a href="#cpu">CPUs</a>
         <ul>
-            <li><a href="#cpu">CPUs</a>
-                <ul>
-                    <li><a href="#purp">The purpose of a CPU</a></li><li><a href="#speed">Processor speed</a></li><li><a href="#core">Processor cores</a></li><li><a href="#cache">Processor cache</a></li><li><a href="#perf">Factors affecting processor performance</a></li><li><a href="#vonn">The Von Neumann architecture</a></li><li><a href="#issues">Problems with Von Neumann</a></li><li><a href="#fde">The fetch, decode, execute cycle</a></li>
-                </ul>
-            </li>
-            <li><a href="#embed">Embedded systems</a>
-                <ul>
-                    <li><a href="#esys">What's an embedded system?</a></li>
-                </ul>
-            </li>
+            <li><a href="#purp">The purpose of a CPU</a></li><li><a href="#speed">Processor speed</a></li><li><a href="#core">Processor cores</a></li><li><a href="#cache">Processor cache</a></li><li><a href="#perf">Factors affecting processor performance</a></li><li><a href="#vonn">The Von Neumann architecture</a></li><li><a href="#issues">Problems with Von Neumann</a></li><li><a href="#fde">The fetch, decode, execute cycle</a></li>
         </ul>
-    </div>
-</div>
+    </li>
+    <li><a href="#embed">Embedded systems</a>
+        <ul>
+            <li><a href="#esys">What's an embedded system?</a></li>
+        </ul>
+    </li>
+</ul>
+{% include 'partials/contentsEnd.html' %}
 
 <br>
 
