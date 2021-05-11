@@ -1,0 +1,317 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+        <title>OCR CompSci | 1.1 I do not know what to put here</title>
+    
+
+    <link rel="stylesheet" href="http://localhost:8000/bootstrap.min.css" type="text/css">
+    <script src="http://localhost:8000/bootstrap.min.js" defer></script>
+    <script src="http://localhost:8000/jquery-3.5.1.slim.min.js" defer></script>
+
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic");
+        body {
+            font-family: "Lato", sans-serif;
+        }
+    </style>
+    
+    <meta property="og:site_name" content="tdpain.net">
+
+    <meta property="og:title" content="OCR CompSci - 1.1 I do not know what to put here">
+    <meta property="og:description" content="Revision materials for section 1.1 (I do not know what to put here) of the OCR GCSE CompSci course.">
+    <meta name="description" content="Revision materials for section 1.1 (I do not know what to put here) of the OCR GCSE CompSci course.">
+
+<meta property="og:url" content="http://localhost:8000/11/">
+
+
+    
+</head>
+<body>
+    
+    <div class="jumbotron jumbotron-fluid">
+    <div style="position: absolute; top: 0; padding-left: 10px; padding-top: 5px; font-size: 15px">
+        
+            <a href="../">Go back</a>
+        
+    </div>
+    <div class="container">
+
+        
+            <h1 class="display-4">1.1 I do not know what to put here</h1>
+        
+
+        <p class="lead">OCR Computer Science H446</p>
+    </div>
+</div>
+    <main class="container">
+        
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h6>Contents</h6>
+<ul>
+    <li><a href="#cpu">CPUs</a>
+        <ul>
+            <li><a href="#purp">The purpose of a CPU</a></li><li><a href="#speed">Processor speed</a></li><li><a href="#core">Processor cores</a></li><li><a href="#cache">Processor cache</a></li><li><a href="#perf">Factors affecting processor performance</a></li><li><a href="#vonn">The Von Neumann architecture</a></li><li><a href="#issues">Problems with Von Neumann</a></li><li><a href="#fde">The fetch, decode, execute cycle</a></li>
+        </ul>
+    </li>
+    <li><a href="#embed">Embedded systems</a>
+        <ul>
+            <li><a href="#esys">What's an embedded system?</a></li>
+        </ul>
+    </li>
+</ul>
+    </div>
+</div>
+
+<br>
+
+
+<h3 id="cpu">CPUs</h3>
+
+
+
+<div class="d-flex justify-content-center">
+    <img src="../img/cpu.jpg" class="img-fluid rounded" width="40%" alt="A CPU">
+</div>
+
+
+<br>
+
+
+<h4 id="purp">The purpose of the CPU</h5>
+
+<p>
+    The 
+<span style="text-decoration-style: dotted; text-decoration-line: underline;" data-toggle="tooltip" data-placement="top" title="Central Processing Unit">CPU</span>
+ is often refered to as the "brains of the computer" - and it is. The CPU carries out mathematical operations, in order to process data and execute instructions. Without it, the computer would be unable to do anything, and would be an expensive paperweight.</p>
+
+
+<h4 id="speed">Processor speed</h5>
+
+<p>
+    All CPUs have a speed, measured in hertz. This refers to the number of instructions (or cycles) they can process per second. Typically, today processors have speeds measured in 
+<span style="text-decoration-style: dotted; text-decoration-line: underline;" data-toggle="tooltip" data-placement="top" title="Abbreviated &#39;GHz&#39;
+Equates to 1 billion cycles per second">gigahertz</span>
+, typically ranging from two to three gigahertz, but older processors were measured in megahertz.</p>
+<p>
+    <a href="http://www.mooreslaw.org/" target="_blank" rel="noopener">Moore's Law</a> relates to processor speed; it was created in the 1970s by Gordon E. Moore when he was working at Intel as president of the company. It stated that:
+    <blockquote class="blockquote">
+        <p class="mb-0"><i>"processor speeds, or overall processing power for computers will double every two years"</i></p>
+    </blockquote>
+    which proved true, for a long time, however processor speeds have reached a limit and have plateaued.</p>
+
+
+<h4 id="core">Processor cores</h5>
+
+<p>
+    Within a processor, there are smaller processors called cores, where instructions are executed. Within a CPU as a whole, you can have one or multiple cores, for example a dual or quad core processor. Each core also operates independently of all the other cores.
+</p>
+<p>
+    The benefit of having more cores in a CPU is that it gives the processor the capacity to execute as much as two instructions per tick, however this does not always happen.
+</p>
+
+
+<h4 id="cache">Processor cache</h5>
+
+<p>
+    All processors also have a small amount of very fast, volatile memory inside them, called cache. This cache acts as a buffer between the processor and the main system memory (RAM). This is needed because, even though RAM is fast, the processor is still faster, so it uses the processor cache in order to reduce the amount of time spent waiting for the RAM by storing commonly used instructions in the cache as well as the main memory.
+</p>
+<p>
+    There are also three different types, or levels, of cache commonly found in CPUs. This is known as 
+<span style="text-decoration-style: dotted; text-decoration-line: underline;" data-toggle="tooltip" data-placement="top" title="Level one, level two and level three">L1, L2 and L3</span>
+.
+    <ul>
+        <li>Level 1
+            <ul>
+                <li>The fastest type of cache</li>
+                <li>Typically about 8 to 64 kilobytes</li>
+                <li>Built into the CPU, usually one set of L1 cache for each core</li>
+            </ul>
+        </li>
+        <li>Level 2
+            <ul>
+                <li>Slower than L1, but also larger capacity</li>
+                <li>Sometimes built into the CPU, usually a separate IC on the motherboard between the CPU and RAM</li>
+            </ul>
+        </li>
+        <li>Level 3
+            <ul>
+                <li>Again slower than L2, again larger capacity</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+
+<h4 id="perf">Factors affecting processor performance</h5>
+
+<p>
+    <ul>
+        <li>Clock speed
+            <ul>
+                <li>Doubling the clock speed will double the amount of instructions that can be executed per second</li>
+            </ul>
+        </li>
+        <li>Cores
+            <ul>
+                <li>Quadrupling the number of cores may quadruple the number of instructions that can be executed per second</li>
+            </ul>
+        </li>
+        <li>Cache size
+            <ul>
+                <li>Increasing the cache size will reduce the number of calls to the main memory and thus may speed up processing of these instructions as it does not have to wait for data for so long.</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+
+<h4 id="vonn">The Von Neumann architecture</h5>
+
+<p>
+    When using early computers, if you wanted to perform a calculation, you had to manually rewire the computer by hand. American computer scientist John Von Neumann had the idea that instead of storing only data in the main memory, the instructions should be stored in the main memory also. This meant the computer would be much easier to reprogram, as the program itself would effectively be treated like data. This stored-program architecture came to be known as the "Von Neumann" architecture.
+</p>
+<p>
+    The Von Neumann architecture consists of a few main components.
+    <ul>
+        <li>MAR
+            <ul>
+                <li>Memory Address Register</li>
+                <li>Stores the current memory address in use.</li>
+            </ul>
+        </li>
+        <li>MDR
+            <ul>
+                <li>Memory Data Register</li>
+                <li>Stores data and instructions that have been transferred from the main memory.</li>
+            </ul>
+        </li>
+        <li>CIR
+            <ul>
+                <li>Current Instruction Register</li>
+                <li>Instructions that have been stored by the MDR are then transferred to the CIR.</li>
+            </ul>
+        </li>
+        <li>PC
+            <ul>
+                <li>Program Counter</li>
+                <li>Holds the address of the next instruction in memory or the current data address in main memory.</li>
+            </ul>
+        </li>
+        <li>ALU
+            <ul>
+                <li>Arithmetic Logic Unit</li>
+                <li>Carries out mathematical and logical calculations.</li>
+            </ul>
+        </li>
+        <li>Accumulator
+            <ul>
+                <li>Stores the result of the calculation performed by the ALU.</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+<p>
+    The main memory and CPU are connected by three data buses - the address bus, the control bus, and the data bus. The address bus is a one way bus going from the CPU to main memory, and is used to request the contents of a specific data address from the main memory. The data bus is two way, and is used to write to and retrieve data from the main memory. The control bus is used to send instruction signals to the main memory, for example read/write commands.
+</p>
+
+
+<div class="d-flex justify-content-center">
+    <img src="../img/vonneumann.jpg" class="img-fluid rounded" width="40%" alt="An example of the Von Neumann architecture">
+</div>
+
+
+<div class="d-flex justify-content-center">
+    <img src="../img/controlbuses.jpg" class="img-fluid rounded" width="40%" alt="Control buses in a CPU">
+</div>
+
+
+
+<h4 id="issues">Problems with Von Neumann</h5>
+
+<p>
+    <ol>
+        <li>Every piece of data and instruction has to be passed through the data bus to go between the CPU and main memory, or vice versa.
+            <ul>
+                <li>The issue lies within the speed of the data bus.</li>
+                <li>The data bus is much slower than the rate at which the CPU works. This is called the Von Neumann bottleneck.</li>
+                <li>This is solved by using <a href="#cache">cache</a>.</li>
+                <li>Using cache will speed up the processor's operations as it spends less time waiting for a result of a request to the main memory every time is requires data or instructions.</li>
+            </ul>
+        </li>
+        <li>Both data and programs use the same memory space
+            <ul>
+                <li>This is ok, until a poorly written program is run, and then it can write data into an area holding other instructions or data for another process, trashing the memory in the process and making it unusable.</li>
+            </ul>
+        </li>
+        <li>The rate at which instructions and data are fetched is very different, and often calls for instructions or data occur at similar times.
+            <ul>
+                <li>The solution is the <a href="https://en.wikipedia.org/wiki/Harvard_architecture" target="_blank">Harvard architecture</a>.</li>
+                <li>This splits the main memory into two parts - one for data, and one for instructions.</li>
+                <li>Each area has separate buses, and it means that the CPU can be fetching data and instructions simultanously, which can speed up processor operation.</li>
+            </ul>
+        </li>
+    </ol>
+</p>
+
+<h5 id="fde">The fetch, decode, execute cycle</h5>
+<p>
+    Every tick or clock cycle of a processor is one full FDE cycle. During an FDE cycle, there are three main stages: fetch, decode and execute.
+    <ul>
+        <li>Fetch
+            <ul>
+                <li>First off, the the program counter is incremented by one.</li>
+                <li>The contents of the PC are transferred into the MAR.</li>
+                <li>The memory address is derived from the MAR and sent along the address bus, and the contents of the requested memory location is transferred back to the processor by the data bus, and transferred into the MDR.</li>
+                <li>The instruction is transferred to the CIR.</li>
+            </ul>
+        </li>
+        <li>Decode
+            <ul>
+                <li>Within the CIR, the instruction is decoded into an op code and an operand, and held there.</li>
+            </ul>
+        </li>
+        <li>Execute
+            <ul>
+                <li>The instruction is carried out by the ALU, and the result of the calculation is stored in the accumulator.</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+
+<h3 id="embed">Embedded systems</h3>
+
+
+
+<div class="d-flex justify-content-center">
+    <img src="../img/microwave.jpg" class="img-fluid rounded" width="40%" alt="Resultant explosion from leaving a spoon in the microwave">
+</div>
+
+
+<div class="d-flex justify-content-center">
+    <figcaption class="figure-caption justify-content-center">Resultant explosion from leaving a spoon in the microwave</figcaption>
+</div>
+
+
+<h5 id="esys">What's an embedded system?</h5>
+<p>
+    An embedded system is a computer system made up of both hardware and software. Usually, these are used for very specialised tasks, and they don't usually include a full operating system. And example of where you might find an embedded system is in a dishwasher, oven or microwave.
+</p>
+
+        <br>
+        <footer style="font-size: 0.8em;margin-left: 1em;padding-left: 1em;">
+    Found an issue with this site? Let me know by using the contact form at <a href="https://www.tdpain.net?contact">on my homepage</a>.<br>
+    Verbatim copying and redistribution of this page is allowed under the <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">Creative Commons Noncommercial Noderivs licence (v4.0)</a>, provided this notice is preserved.
+</footer>
+    </main>
+    <br>
+
+</body>
+</html>
